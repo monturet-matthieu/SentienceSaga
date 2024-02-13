@@ -55,8 +55,6 @@ export default {
     this.getImage('ambulance.jpg')
     this.generateOutcomeText1()
     this.generateOutcomeText2()
-    this.generateOutcomeText3()
-    this.generateOutcomeText4()
   },
 
   methods: {
