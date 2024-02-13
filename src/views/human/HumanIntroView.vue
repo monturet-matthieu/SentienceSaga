@@ -41,7 +41,7 @@ export default {
 
       choices2: [
         { outcomes: [
-          `Aujourd'hui, je me prépare pour un rendez-vous avec mon patron. Je compte bien lui dire ce que je pense à propos des conditions de travail depuis qu'on a. Je suis prêt à défendre les droits des travailleurs humains face à cette automatisation menaçante. Je me prépare à partir, en étant déterminé à montrer que je me laisserais pas faire`,
+          `Aujourd'hui, je me prépare pour un rendez-vous avec mon patron. Je compte bien lui dire ce que je pense à propos des conditions de travail depuis que la concurrence nous oppresse. Je suis prêt à défendre les droits des travailleurs humains face à cette automatisation menaçante. Je me prépare à partir, en étant déterminé à montrer que je me laisserais pas faire`,
 
           `D’ailleurs, mon patron m’a convoqué aujourd’hui pour parler de l’automatisation des camions, qui va encore être encore plus poussée apparemment. Ils disent même que des androïdes vont être spécialement conçus pour fonctionner en symbiose avec les camions. Ça me plaît pas du tout cette histoire, je vais en profiter pour lui glisser deux mots sur ce que je pense`
         ]}
