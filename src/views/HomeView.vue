@@ -1,14 +1,16 @@
 <template>
   <div class="grid grid-cols-2 h-screen text-white bg-black font-rationale text-base">
     <div class="grid grid-cols-2 justify-center bg-hero-bg bg-cover">
-      <div v-for="image in images" :key="image.nom">
+        <img
+          class="h-screen w-fit mix-blend-lighten"
+          :src="images[0]"
+          alt="hero image android"
+        />
         <img
           class="h-screen w-fit mix-blend-hard-light"
-          :src="image.nom"
-          alt="hero images human and android"
-          
+          :src="images[1]"
+          alt="hero image human"
         />
-      </div>
     </div>
 
     <div class="bg-hero-bg2 bg-cover py-24 px-12 overflow-y-scroll overflow-x-hidden">
@@ -59,7 +61,7 @@ export default {
       const querySnap = await getDocs(q)
 
       querySnap.forEach((doc) => {
-        this.images.push(doc.data())
+        this.images.push(doc.data().nom)
       })
     }
   },
