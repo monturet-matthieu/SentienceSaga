@@ -29,6 +29,7 @@
 <script>
 import db from '../firebase/init.js'
 import { where, query, collection, getDocs } from 'firebase/firestore'
+
 import ChoiceButton from '@/components/ChoiceButton.vue'
 
 export default {
@@ -42,7 +43,7 @@ export default {
     return {
       images: [],
       title: 'Sentience Saga',
-      description: `Vous n'allez simplement visiter un site. Vous allez vivre une expérience riche et intense dont VOUS serez le héros`,
+      description: `Vous n'allez pas simplement visiter un site. Vous allez vivre une expérience riche et intense dont VOUS serez le héros`,
       description2: `Ces histoires mettent en scène 2 personnages diamétralement opposés. C'est à votre tour de choisir quels destins attendent nos héros`,
       choices: [
         { text: `Incarner l'humain`, outcome: { result: 'humanIntro' } },

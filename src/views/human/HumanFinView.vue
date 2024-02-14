@@ -23,7 +23,7 @@
                     </div>
                     <div class="flex flex-col space-y-8 items-center">
                         <textarea rows=4 class="outline-none border-2 border-blue focus:border-4 focus:border-yellow px-8 py-3 rounded-2xl placeholder:text-gray placeholder:italic resize-none w-[100%] pl-4 placeholder:text-base placeholder:text-center" name="description" placeholder="Décrivez votre suggestion" required></textarea>
-                        <button class="font-black-ops-one bg-blue text-lg text-center border-2 border-dark-blue hover:border-white hover:scale-y-110 transition ease-in rounded-2xl text-xl py-2 px-12" type="submit">Envoyer</button>
+                        <button class="font-black-ops-one text-white bg-blue text-lg text-center border-2 border-dark-blue hover:border-white hover:scale-y-110 transition ease-in rounded-2xl text-xl py-2 px-12" type="submit">Envoyer</button>
                     </div>
                 </div>
             </form>
