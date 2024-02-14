@@ -72,7 +72,7 @@
 
         dialog11: `Licencié ou non, je mettrai mon plan à exécution`,
 
-        dialog12: `Ça suffit, tu sors !`,
+        dialog12: `Ça suffit, tu viens avec nous maintenant !`,
 
         dialog13: `Ce n'est pas fini ! Vous pouvez être sûr que vous me reverrez ! Je ne lâcherai pas si facilement ! Vous le regretterez !`,
 
