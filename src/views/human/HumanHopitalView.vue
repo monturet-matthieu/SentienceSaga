@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-human--bg-hopital bg-cover bg-center bg-black text-white font-rationale text-base px-56 h-screen flex flex-col gap-8 pt-6 overflow-scroll">
+    <div class="bg-human--bg-hopital bg-cover bg-center bg-black text-white font-rationale text-base px-56 h-screen flex flex-col gap-8 pt-6 overflow-y-scroll overflow-x-hidden">
       <CardText :text="outcomeText1" />
 
       <CardDialog :img="images[0]" alt="Infirmière" :dialog="outcomeText2" />

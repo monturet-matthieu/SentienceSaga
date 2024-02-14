@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="bg-hero-bg2 bg-cover py-24 px-12 overflow-scroll">
+    <div class="bg-hero-bg2 bg-cover py-24 px-12 overflow-y-scroll overflow-x-hidden">
       <div class="flex flex-col justify-center">
         <h1 class="text-4xl text-center font-black-ops-one my-8">{{ title }}</h1>
         <div class="flex flex-col gap-6">
@@ -21,9 +21,7 @@
       </div>
 
       <p class="text-center text-2xl font-bold mt-8">Choisissez l'histoire à découvrir</p>
-      <ChoiceButton class="flex gap-8"
-        :choices="choices"
-      />
+      <ChoiceButton class="flex gap-8" :choices="choices" />
     </div>
   </div>
 </template>

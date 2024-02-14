@@ -12,12 +12,12 @@
             <form action="https://formspree.io/f/myyrwgnr" method="POST" class="flex flex-col items-center border-blue bg-black/70 border-2 rounded-3xl px-2 py-4">
                 <h3 class="font-black-ops-one text-lg text-center mb-2 text-2xl">Créez un nouveau chemin / personnage !</h3>
                 <p class="text-lg text-center mb-8 text-base text-red">!! Un formulaire par chemin/personnage !!</p>
-                <div class="font-karla space-y-8 text-white">
+                <div class="font-karla space-y-8 text-black">
                     <div class="flex flex-col space-y-8 w-[450px]">
                         <input class="outline-none border-2 border-blue focus:border-4 focus:border-yellow px-5 rounded-2xl placeholder:text-gray placeholder:italic pl-4 py-3 placeholder:text-base" type="text" name="name" placeholder="Nom/Pseudo" required />
                         <input class="outline-none border-2 border-blue focus:border-4 focus:border-yellow px-5 rounded-2xl placeholder:text-gray placeholder:italic pl-4 py-3 placeholder:text-base" type="email" name="email" placeholder="Adresse mail" required />
                         <div class="flex flex-col gap-2">
-                          <label class="text-base text-center" for="emplacement">Renseignez ici l'endroit à partir duquel votre chemin dévie de l'histoire actuelle</label>
+                          <label class="text-base text-center text-white" for="emplacement">Renseignez ici l'endroit à partir duquel votre chemin dévie de l'histoire actuelle</label>
                           <input class="outline-none border-2 border-blue focus:border-4 focus:border-yellow px-5 rounded-2xl placeholder:text-gray placeholder:italic pl-4 py-3 placeholder:text-base" type="text" name="emplacement" placeholder="Ex: Accueil (nouveau perso), à l'appartement, au bar..." required />
                         </div>
                     </div>

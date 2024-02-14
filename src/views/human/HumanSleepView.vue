@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black text-white font-rationale text-base px-56 h-screen overflow-scroll">
+    <div class="bg-black text-white font-rationale text-base px-56 h-screen overflow-y-scroll overflow-x-hidden">
       <div class="flex flex-col gap-8 pt-16">
         <CardText :text="outcomeText1"/>
   

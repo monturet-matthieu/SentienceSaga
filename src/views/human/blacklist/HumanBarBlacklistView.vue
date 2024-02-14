@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-human--bg-bar bg-cover bg-bottom bg-black text-white font-rationale text-base px-56 h-screen flex flex-col gap-8 pt-6 overflow-scroll">
+    <div class="bg-human--bg-bar bg-cover bg-bottom bg-black text-white font-rationale text-base px-56 h-screen flex flex-col gap-8 pt-6 overflow-y-scroll overflow-x-hidden">
       <CardText :text="intro" />
 
       <CardDialog :img="images[0]" alt="Phil" :dialog="outcomeText1"/>
