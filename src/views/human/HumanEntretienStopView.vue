@@ -2,107 +2,113 @@
   <div>
     <div class="bg-human--bg-entretien bg-cover bg-center bg-black text-white font-rationale text-base px-56 h-screen flex flex-col gap-8 pt-6 overflow-y-scroll overflow-x-hidden">
       <CardText :text="outcomeText1" />
-      
-      <CardDialog :img="images[0]" alt="DRH" :dialog="outcomeText2"/>
+
+      <CardText :text="outcomeText2" />
 
       <CardDialog :img="images[1]" alt="Milan" :dialog="outcomeText3"/>
-
+      
       <CardDialog :img="images[0]" alt="DRH" :dialog="outcomeText4"/>
 
       <CardDialog :img="images[1]" alt="Milan" :dialog="outcomeText5"/>
 
-      <CardDialog :img="images[0]" alt="DRH" :dialog="outcomeText6"/>
+      <CardText :text="outcomeText6" />
 
-      <CardDialog :img="images[1]" alt="Milan" :dialog="outcomeText7"/>
+      <ul v-if="!showContent1" class="mb-16">
+        <li @click="toggleContent1"
+        class="font-black-ops-one text-center bg-dark-blue border-2 border-blue hover:border-white hover:scale-y-110 transition ease-in rounded-full py-1"
+        >
+        Quelques semaines plus tard...
+        </li>
+      </ul>
 
-      <CardDialog :img="images[0]" alt="DRH" :dialog="outcomeText8"/>
+      <div v-if="showContent1" class="flex flex-col gap-8 mb-16">
+        <CardText :text="outcomeText7" />
 
-      <CardText :text="outcomeText9" />
-
-      <ChoiceButton class="mb-16 gap-8" :choices="choices" />
+        <CardText :text="outcomeText8" />
+        
+        <NextButton text="J'aurais dû rester à cet entretien..." />
+      </div>
     </div>
   </div>
-  </template>
+</template>
   
-  <script>
+<script>
   import db from '@/firebase/init.js'
   import { where, query, collection, getDocs } from 'firebase/firestore'
   
-  import ChoiceButton from '@/components/ChoiceButton.vue'
   import CardText from '@/components/CardText.vue'
   import CardDialog from '@/components/CardDialog.vue'
+  import NextButton from '@/components/NextButton.vue'
   
   export default {
-    name: `HumanEntretien`,
+    name: `HumanEntretienStop`,
     data() {
       return {
         images: [],
+
+        showContent1: false,
   
         choices1: [
           { outcomes: [
-            `J’arrive sur le lieu indiqué par l’annonce, et j’entre à l’intérieur sans plus attendre. Je vais à la réception, qui m’indique la salle d’attente. Je patiente une dizaine de minutes avant d’être reçu par le directeur des ressources humaines`,
+            `Je suis moi-même surpris, car ma colère se dissipe pour laisser place au dégoût. Elle m’a quitté pour ce mec ? Elle s’est fiancée à nouveau, si vite ? Ça fait beaucoup d’informations à avaler, la pilule a du mal à passer là`,
 
-            `Je me rends au lieu mentionné dans l'annonce et pénètre immédiatement à l'intérieur. Je me dirige vers la réception, où on me guide vers la salle d'attente. J'attends une dizaine de minutes avant d'être appelé pour rencontrer le responsable des ressources humaines`
+            `Je ressens une surprise inattendue, car ma colère s'estompant, cède la place à un profond dégoût. Elle a décidé de partir avec ce type ? Elle a déjà retrouvé un fiancé ? Toutes ces nouvelles d'un coup, ça passe difficilement`
           ] }
         ],
   
         choices2: [
           { outcomes: [
-            `Bonjour Monsieur, allez-y asseyez-vous`,
+            `Le recruteur me regarde droit dans les yeux, et je sens que la moutarde me monte au nez. Il est vraiment sans-gêne, à mêler le privé au professionnel dès mon arrivée. Il est hors de question que je bosse avec quelqu’un comme ça`,
 
-            `Installez-vous je vous en prie`
+            `Le recruteur me fixe intensément, et je ressens une montée d'irritation. Il se montre vraiment impoli en mêlant des sujets personnels au contexte professionnel dès le début de la conversation. Travailler avec une personne aussi incapable est totalement hors de propos.`
           ]}
         ],
 
         choices3: [
           { outcomes: [
-            `Merci, M. ?`,
+            `Non mais c’est quoi ce manque de professionnalisme ? À peine arrivé vous franchissez déjà la limite du privé. Je crois que je n’ai rien à faire ici`,
+
+            `Qu'est-ce que c'est que ce manquement professionnel ? Vous perdez pas de temps pour dépaser les limites de la vie privée dès mon arrivée. Je ne pense pas que travailler avec vous me soit bénéfique`
           ]}
         ],
 
         choices4: [
           { outcomes: [
-            `Je suis M. Rojas, responsable des ressources humaines de l’entreprise. Et vous êtes ?`,
+            `Pardon ? Mais c’est simplement la coïncidence qui m’a surpris ! Si vous le souhaitez, nous pouvons débuter l’entretien dès maintenant, pardonnez-moi pour cet écart…`,
 
-            `Je me présente : Miguel Rojas, directeur des ressources humaines de l’entreprise. Et à qui ai-je l'honneur ?`
+            `Comment ça ? J'étais juste surpris par cette coïncidence ! Si vous êtes prêt, nous pouvons commencer l'entretien immédiatement. Excusez-moi pour cette conduite...`
           ]}
         ],
 
         choices5: [
           { outcomes: [
-            `M. Vaylene, j’ai postulé à votre offre d’emploi ce matin`,
+            `Non, je ne pense pas. Nous n’avons visiblement pas les mêmes valeurs du travail`,
 
-            `Je suis M. Vaylene, j'ai soumis ma candidature pour le poste vacant ce matin`,
+            `Je ne suis pas convaincu. Il semble évident que nos perspectives sur l'éthique professionnelle diffèrent`
           ]}
         ],
 
         choices6: [
           { outcomes: [
-            `Attendez, Vaylene comme Jessica Vaylene ?`,
+            `Je me lève et quitte le bureau sans écouter les lamentables excuses de ce clown. Je retourne chez moi de ce pas, et je vais continuer à chercher un nouveau poste à pourvoir`,
+
+            `Je me lève et m'en vais immédiatement sans prêter attention aux excuses pitoyables de cet incompétent. Dès mon retour à l'appartement, je continue à postuler aux nombreuses offres d'emploi disponibles dans l'espoir de trouver mieux`
           ]}
         ],
 
         choices7: [
           { outcomes: [
-            `Oui, enfin plus maintenant mais vous la connaissez ?`,
+            `Je n’ai toujours pas réussi à trouver de travail depuis cet entretien désastreux. Pas une seule réponse positive à mes candidatures, même avec mes 13 années d’expérience…`,
 
-            `Jessica est mon ex-femme, nous sommes divorcés à présent donc elle ne doit plus s'appeler comme ça maintenant`
+            `Je n'ai pas encore réussi à décrocher un emploi depuis cet entretien . Aucune réponse favorable à mes candidatures, même en mettant en avant mes 13 années d'expérience...`
           ]}
         ],
 
         choices8: [
           { outcomes: [
-            `Ah mais vous êtes son ex-mari ! C’est pour ça, je me disais que je vous avais déjà vu ! Je suis le fiancé de Jessica, ravi de vous rencontrer ! Je l'ai connu quand elle portait encore votre nom, c'est pour ça`,
+            `Je tiens uniquement grâce à mes économies faites au fil des années, mais elles étaient bien maigres alors je ne sais pas encore combien de temps Rookie et moi allons pouvoir survivre seulement grâce à ça…`,
 
-            `Oh, vous êtes son ancien époux en fait ! Il me semblait bien que votre visage me disait quelque chose ! Je suis le fiancé de Jessica, enchanté de faire votre connaissance ! J'ai fait la rencontre de Jessica à l'époque où elle était encore mariée avec vous, d'où ma question par rapport à votre nom`
-          ]}
-        ],
-
-        choices9: [
-          { outcomes: [
-            `Sous le choc face à cette nouvelle inattendue, je ne sais quoi répondre à ça. Bien sûr, je suis en colère, parce que ça ne fait pas si longtemps que ça que nous avons divorcé et qu’elle s’est déjà retrouvé un fiancé, mais je n’ai rien en particulier contre lui et il ne semble pas non plus être hostile à mon égard`,
-
-            `Déconcerté par cette nouvelle surprenante, je suis un peu désemparé. Naturellement, je ressens de la frustration, étant donné que notre divorce est récent et qu'elle a déjà trouvé un fiancé. Cependant, je n'ai aucune animosité particulière envers lui, et il semble également ne pas nourrir d'hostilité envers moi`
+            `Ma seule source de soutien repose sur les économies que j'ai accumulées au fil des années, mais elles étaient assez modestes. Je ne suis pas encore certain de la durée pendant laquelle Rookie et moi pourrons subsister uniquement grâce à cela`
           ]}
         ],
 
@@ -114,17 +120,10 @@
         outcomeText6: null,
         outcomeText7: null,
         outcomeText8: null,
-        outcomeText9: null,
-
-        choices: [
-          { text: `Lui faire comprendre qui je suis`, outcome: { result: 'humanEntretienAg' } },
-          { text: `Couper court à la conversation`, outcome: { result: 'humanEntretienPro' } },
-          { text: `S'indigner`, outcome: { result: 'humanEntretienStop' } },
-        ],
       }
     },
   
-    components: { CardText, CardDialog, ChoiceButton },
+    components: { CardText, CardDialog, NextButton },
   
     created() {
       this.getImage('drh.jpg')
@@ -137,16 +136,19 @@
       this.generateOutcomeText6()
       this.generateOutcomeText7()
       this.generateOutcomeText8()
-      this.generateOutcomeText9()
     },
   
     methods: {
+      toggleContent1() {
+        this.showContent1 = !this.showContent1;
+      },
+
       async getImage(t) {
         const q = query(collection(db, 'images'), where('nom', '==', t))
         const querySnap = await getDocs(q)
 
         querySnap.forEach((doc) => {
-            this.images.push(doc.data().nom)
+          this.images.push(doc.data().nom)
         })
       },   
       generateOutcomeText1() {
@@ -196,12 +198,6 @@
         const selectedChoice = this.choices8[randomIndex]
         const randomOutcomeIndex = Math.floor(Math.random() * selectedChoice.outcomes.length)
         this.outcomeText8 = selectedChoice.outcomes[randomOutcomeIndex]
-      },
-      generateOutcomeText9() {
-        const randomIndex = Math.floor(Math.random() * this.choices9.length)
-        const selectedChoice = this.choices9[randomIndex]
-        const randomOutcomeIndex = Math.floor(Math.random() * selectedChoice.outcomes.length)
-        this.outcomeText9 = selectedChoice.outcomes[randomOutcomeIndex]
       },
     }
   }

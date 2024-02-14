@@ -18,6 +18,7 @@ import HumanReveilBlacklistView from '@/views/human/blacklist/HumanReveilBlackli
 import HumanEntretienView from '@/views/human/HumanEntretienView.vue'
 import HumanEntretienAgView from '@/views/human/HumanEntretienAgView.vue'
 import HumanEntretienProView from '@/views/human/HumanEntretienProView.vue'
+import HumanEntretienStopView from '@/views/human/HumanEntretienStopView.vue'
 import HumanPasseurView from '@/views/human/HumanPasseurView.vue'
 import HumanHopitalView from '@/views/human/HumanHopitalView.vue'
 import HumanHopitalAndroid1View from '@/views/human/HumanHopitalAndroid1View.vue'
@@ -121,6 +122,11 @@ const router = createRouter({
       path: '/humanEntretienPro',
       name: 'HumanEntretienPro',
       component: HumanEntretienProView
+    },
+    {
+      path: '/humanEntretienStop',
+      name: 'HumanEntretienStop',
+      component: HumanEntretienStopView
     },
     {
       path: '/humanPasseur',

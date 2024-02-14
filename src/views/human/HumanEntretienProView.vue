@@ -86,11 +86,6 @@
         outcomeText4: null,
         outcomeText5: null,
         outcomeText6: null,
-
-        choices: [
-          { text: `Lui faire comprendre qui je suis`, outcome: { result: 'humanEntretienAg' } },
-          { text: `Couper court à la conversation`, outcome: { result: 'humanEntretienPro' } },
-        ],
       }
     },
   

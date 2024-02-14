@@ -11,17 +11,17 @@
 
       <ul v-if="!showContent1 && !showContent2 && !showContent3" class="font-black-ops-one text-xl flex justify-around gap-8 mt-6 mb-16">
         <li @click="toggleContent1"
-        class="border-4 border-dark-blue text-center  bg-light-blue text-black px-4 py-2 hover:-skew-x-12 hover:border-red transition-transform ease-in-out"
+        class="border-4 border-dark-blue text-center bg-light-blue text-black px-4 py-2 hover:-skew-x-12 hover:border-red transition-transform ease-in-out"
         >
         S'énerver contre Phil
         </li>
         <li @click="toggleContent2"
-        class="border-4 border-dark-blue text-center  bg-light-blue text-black px-4 py-2 hover:-skew-x-12 hover:border-red transition-transform ease-in-out"
+        class="border-4 border-dark-blue text-center bg-light-blue text-black px-4 py-2 hover:-skew-x-12 hover:border-red transition-transform ease-in-out"
         >
         Lui poser des questions
         </li>
         <li @click="toggleContent3"
-        class="border-4 border-dark-blue text-center  bg-light-blue text-black px-4 py-2 hover:-skew-x-12 hover:border-red transition-transform ease-in-out"
+        class="border-4 border-dark-blue text-center bg-light-blue text-black px-4 py-2 hover:-skew-x-12 hover:border-red transition-transform ease-in-out"
         >
         Ne rien faire...
         </li>
