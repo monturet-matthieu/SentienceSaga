@@ -2,11 +2,13 @@
     <div class="grid grid-cols-2 h-screen bg-human--bg-fin bg-cover bg-bottom text-white font-rationale text-base overflow-y-scroll overflow-x-hidden">
       <div class="flex flex-col gap-8 mt-12 ml-8">
         <CardText :text="title" class="font-black-ops-one text-3xl text-center" />
+        <CardText :text="description" />
         <CardText :text="description2" />
+        <CardText :text="description3" />
         <NextButton link="/" text="Retour au choix des personnages" />
       </div>
   
-      <div class="flex items-center my-12 ml-10">
+      <div class="flex items-center my-12 mx-10">
             <form action="https://formspree.io/f/myyrwgnr" method="POST" class="flex flex-col items-center border-blue bg-black/70 border-2 rounded-3xl px-16 py-4">
                 <h3 class="font-black-ops-one text-lg text-center text-2xl">Créez un nouveau chemin / personnage !</h3>
                 <p class="text-base">Si vous avez une idée de chemin divergent de l'histoire actuelle, vous pouvez remplir ce formulaire et tracer votre propre route !</p>
