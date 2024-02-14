@@ -11,7 +11,7 @@
 
         <CardText :text="outcomeText3" />
            
-        <NextButton class="mb-16" link="humanHopitalBlacklist" text="Je perds peu à peu connaissance..." />
+        <NextButton class="mb-16" link="humanHopital" text="Je perds peu à peu connaissance..." />
       </div>
     </div>
   </template>

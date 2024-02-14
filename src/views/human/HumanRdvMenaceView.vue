@@ -76,7 +76,7 @@
 
         dialog13: `Ce n'est pas fini ! Vous pouvez être sûr que vous me reverrez ! Je ne lâcherai pas si facilement ! Vous le regretterez !`,
 
-        conclu1: `Les gardes me saississent par les bras et me lèvent de ma chaise, et je bien obligé de les suivre jusqu'à la porte. `,
+        conclu1: `Les gardes me saississent par les bras et me lèvent de ma chaise, et je suis bien obligé de les suivre jusqu'à la porte. `,
 
         conclu2: `Quelques minutes après avoir été “escorté” vers la sortie, j’apprends que je suis licencié, et en bonus je suis également blacklisté des entreprises locales, et toutes les poursuites judiciaires que je risque si je venais à mettre mes menaces à exécution. Intérieurement, je bouillonne et me tâte à faire demi-tour pour lui ravaler la façade, mais au fond je sais que ce ne sera que plus d’ennuis alors j’efface le message et rentre à l’appartement`,
       }

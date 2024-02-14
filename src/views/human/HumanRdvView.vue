@@ -108,7 +108,7 @@
 
             `Avec le comité exécutif, nous avons pris la décision de se séparer de vous car il faut faire des économies`,
 
-            ` C'est un peu plus compliqué que ça, mais oui. Nous devons nous adapter pour rester compétitifs sur le marché. Entre les coûts d'achat des androïdes et les dépenses liées aux problèmes humains, notre entreprise est menacée`,
+            `C'est un peu plus compliqué que ça, mais oui. Nous devons nous adapter pour rester compétitifs sur le marché. Entre les coûts d'achat des androïdes et les dépenses liées aux problèmes humains, notre entreprise est menacée`,
           ]}
         ],
 
